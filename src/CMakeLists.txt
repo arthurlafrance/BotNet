@@ -1,11 +1,16 @@
 cmake_minimum_required(VERSION 3.10)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
 project(botnet VERSION 0.1)
 add_executable(botnet main.cpp)
 
-configure_file(config.h.in config.h)
+add_library(cli cli.cpp)
+list(APPEND EXTRA_LIBS cli)
 
-target_include_directories(botnet PUBLIC "${PROJECT_BINARY_DIR}")
+target_link_libraries(botnet PUBLIC ${EXTRA_LIBS})
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+target_include_directories(botnet PUBLIC 
+    "${PROJECT_BINARY_DIR}"
+)

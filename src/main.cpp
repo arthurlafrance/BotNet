@@ -1,8 +1,11 @@
-#include "config.h"
+#include "cli.hpp"
 
-#include <iostream>
+#include <functional>
 
-int main() {
-    std::cout << "v" << VERSION << std::endl;
+int main(int argc, const char** argv) {
+    std::function<void(void)> command = cli::parseArgs(argc, argv);
+    command();
+
     return 0;
 }
+
