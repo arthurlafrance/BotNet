@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+rm -rf /Users/alafrance/Dev/BotNet/target
+echo "Removed existing build files"
+
+mkdir /Users/alafrance/Dev/BotNet/target
+echo "Successfully cleaned project"

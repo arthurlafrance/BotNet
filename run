@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+EXECUTABLE_PATH=target/botnet
+
+if [ -f "$EXECUTABLE_PATH" ]; then
+    target/botnet
+else
+    echo "Executable not found in target/ directory"
+fi

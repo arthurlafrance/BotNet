@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+cd target
+cmake ../src
+cmake --build .

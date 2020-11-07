@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/alafrance/Dev/BotNet/src/main.cpp
+config.h
+/Users/alafrance/Dev/BotNet/src/config.h
+iostream
+-
+
+config.h
+
