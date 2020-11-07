@@ -1,3 +1,0 @@
-/Users/alafrance/Dev/BotNet/target/CMakeFiles/rebuild_cache.dir
-/Users/alafrance/Dev/BotNet/target/CMakeFiles/edit_cache.dir
-/Users/alafrance/Dev/BotNet/target/CMakeFiles/botnet.dir
