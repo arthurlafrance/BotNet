@@ -24,6 +24,6 @@ The actual BotNet CLI is very simple; it contains only two commands:
 
 ## Still to Come
 Below is a shortlist of subprograms I hope to complete eventually:
-* An adversarial-search based Tic Tac Toe-playing agent
+* An adversarial-search based mancala player
 * Various agents capable of playing different variations of Tic Tac Toe
 * A program capable of playing the puzzle game Threes (and potentially extended to other single-player puzzle games)
