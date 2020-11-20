@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+./build
+mv target/botnet /usr/local/bin/botnet
+./clean
+
+echo "Successfully installed Botnet"

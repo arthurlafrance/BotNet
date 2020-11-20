@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+if [ -e /usr/local/bin/botnet ]
+then
+    rm /usr/local/bin/botnet
+    echo "Successfully uninstalled BotNet"
+else
+    echo "No existing installation of BotNet found"
+fi
