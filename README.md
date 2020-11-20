@@ -15,7 +15,7 @@ In order to use BotNet, you have a few options. Either way, you should start by 
 
 If you'd like to make changes to the code while using BotNet, you can make the desired changes and run `./build` (from the root project directory) to build a new executable (for those curious, the build system uses CMake, which I'm sure is clearly visible in the code, but I've written scripts to automate the build process). After building, run `target/botnet [args]` to run BotNet using the specified arguments.
 
-If you'd instead like to install the current cloned version of BotNet for more permanent use on your machine, run `./install` (script to be finished shortly), which will install it at a standard system path that's accessible for normal terminal use. Note that the install script will ask if you'd like to update the installed version of BotNet if a previous version is present. Note also that the provided uninstall script does exactly what it sounds like; it uninstalls the current version of BotNet (if available).
+If you'd instead like to install the current cloned version of BotNet for more permanent use on your machine, run `./install` (note: you may need to run `sudo ./install`), which will install it at a standard system path that's accessible for normal terminal use. Note that the install script will (eventually) ask if you'd like to update the installed version of BotNet if a previous version is present. Note also that the provided uninstall script (`./uninstall`) does exactly what it sounds like; it uninstalls the current version of BotNet (if available).
 
 The actual BotNet CLI is very simple; it contains only two commands:
 * `botnet --version` or `botnet -v` returns the current BotNet version
