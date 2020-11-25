@@ -1,5 +1,5 @@
-#include "cli.h"
-#include "config.h"
+#include "cli.hpp"
+#include "config.hpp"
 
 #include <iostream>
 #include <map>
