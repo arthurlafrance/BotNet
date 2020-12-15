@@ -5,7 +5,7 @@
 #include <functional>
 
 namespace cli {
-    std::function<void(void)> parseArgs(int argc, const char** argv);
+    std::function<void(void)> parse_args(int argc, const char** argv);
 }
 
 #endif
