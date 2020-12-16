@@ -15,7 +15,7 @@ void Board::sow(unsigned int player, unsigned int pit) {
 
     while (pieces > 0) {
         if (col < 0) {
-            row = row > 0 ? row - 1 : Board::PLAYERS - 1;
+            row = row > 0 ? row - 1 : 1;
             col = Board::PITS - 1;
         }
 
@@ -46,7 +46,30 @@ std::vector<unsigned int> Board::legal_moves(unsigned int player) {
 
 // Returns the outcome of the game at the current state
 mancala::GameOutcome Board::game_over() {
-    return mancala::GameOutcome::CONTINUING;
+    bool board_empty = true;
+
+    for (unsigned int i = 0; i < 2; ++i) {
+        for (unsigned int j = 0; i < Board::PITS; ++j) {
+            if (pits[i][j] != 0) {
+                board_empty = false;
+            }
+        }
+    }
+
+    if (board_empty) {
+        if (stores[0] > stores[1]) {
+            return GameOutcome::P1_WIN;
+        }
+        else if (stores[0] < stores[1]) {
+            return GameOutcome::P2_WIN;
+        }
+        else {
+            return GameOutcome::DRAW;
+        }
+    }
+    else {
+        return GameOutcome::CONTINUING;
+    }
 }
 
 }

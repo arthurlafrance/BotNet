@@ -18,11 +18,10 @@ public:
     GameOutcome game_over();
 
 private:
-    static constexpr unsigned int PLAYERS = 2;
-    static constexpr unsigned int PITS = 6;
+    static constexpr unsigned int PITS = 6; // I'll assume there's only 2 players, but pits could vary
 
-    unsigned int stores[PLAYERS]; // 1 store per player
-    unsigned int pits[PLAYERS][PITS]; // 1 row of 6 pits for each player 
+    unsigned int stores[2]; // 1 store per player
+    unsigned int pits[2][PITS]; // 1 row of 6 pits for each player 
 };
 
 }
