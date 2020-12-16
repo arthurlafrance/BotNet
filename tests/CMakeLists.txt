@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 
 project(gtest-download NONE)
 
-# Download & install GoogleTest
+# Download & install GoogleTest using git
 include(ExternalProject)
 ExternalProject_Add(googletest
     GIT_REPOSITORY https://github.com/google/googletest.git

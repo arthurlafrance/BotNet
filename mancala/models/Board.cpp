@@ -7,6 +7,13 @@
 
 namespace mancala {
 
+// Tests:
+// - out of range
+// - each row:
+    // - stays in same row
+    // - spills over to other row
+    // - spills over to other row and back
+
 // Sows the pit for the given player
 void Board::sow(unsigned int player, unsigned int pit) {
     if (player < 0 || player > 1) {
@@ -29,6 +36,8 @@ void Board::sow(unsigned int player, unsigned int pit) {
 
         ++(pits[row][col]);
         --pieces;
+
+        --col;
     }
 }
 
