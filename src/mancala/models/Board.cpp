@@ -1,8 +1,9 @@
-#include "mancala/models/Board.hpp"
+#include "Board.hpp"
 
 #include <vector>
-#include "mancala/models/GameOutcome.hpp"
+#include "GameOutcome.hpp"
 
+namespace mancala {
 
 // Sows the pit for the given player
 void Board::sow(unsigned int player, unsigned int pit) {
@@ -27,7 +28,7 @@ void Board::sow(unsigned int player, unsigned int pit) {
 // Returns a vector of legal moves the given player can make
 std::vector<unsigned int> Board::legal_moves(unsigned int player) {
     // TODO: bounds check
-    unsigned int[Board::PITS]& row = pits[player];
+    unsigned int (&row)[Board::PITS] = pits[player];
 
     std::vector<unsigned int> moves;
 
@@ -44,6 +45,8 @@ std::vector<unsigned int> Board::legal_moves(unsigned int player) {
 
 
 // Returns the outcome of the game at the current state
-mancala::models::GameOutcome Board::game_over() {
+mancala::GameOutcome Board::game_over() {
+    return mancala::GameOutcome::CONTINUING;
+}
 
 }
