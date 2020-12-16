@@ -2,6 +2,7 @@
 #define BOARD_HEADER
 
 #include <vector>
+
 #include "GameOutcome.hpp"
 
 namespace mancala {

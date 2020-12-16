@@ -1,13 +1,21 @@
 #include "Board.hpp"
 
 #include <vector>
+#include <stdexcept>
+
 #include "GameOutcome.hpp"
 
 namespace mancala {
 
 // Sows the pit for the given player
 void Board::sow(unsigned int player, unsigned int pit) {
-    // TODO: bounds check
+    if (player < 0 || player > 1) {
+        throw std::out_of_range("attempted to access out-of-range player");
+    }
+    else if (pit < 0 || pit > Board::PITS - 1) {
+        throw std::out_of_range("attempted to access out-of-range pit");
+    }
+
     unsigned int pieces = pits[player][pit];
     
     unsigned int row = player;
@@ -27,7 +35,10 @@ void Board::sow(unsigned int player, unsigned int pit) {
 
 // Returns a vector of legal moves the given player can make
 std::vector<unsigned int> Board::legal_moves(unsigned int player) {
-    // TODO: bounds check
+    if (player < 0 || player > 1) {
+        throw std::out_of_range("attempted to access out-of-range player");
+    }
+    
     unsigned int (&row)[Board::PITS] = pits[player];
 
     std::vector<unsigned int> moves;
