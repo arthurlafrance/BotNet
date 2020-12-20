@@ -49,7 +49,7 @@ add_subdirectory(
 )
 
 # Create test executable & link w/ gtest, src libraries
-file(GLOB TEST_SRC_FILES ${CMAKE_SOURCE_DIR}/tests/*.cpp)
+file(GLOB_RECURSE TEST_SRC_FILES ${CMAKE_SOURCE_DIR}/tests/**/*.cpp)
 add_executable(botnet_tests ${TEST_SRC_FILES})
 target_link_libraries(botnet_tests mancala gtest gtest_main)
 add_test(botnet_tests COMMAND botnet_tests)
