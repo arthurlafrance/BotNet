@@ -1,5 +1,6 @@
 #include <vector>
 #include <stdexcept>
+#include <iostream>
 
 #include <gtest/gtest.h>
 
@@ -149,4 +150,31 @@ TEST_F(BoardTests, Player2WinCorrectlyReturned) {
     board = mancala::Board(stores, empty_board);
 
     ASSERT_EQ(board.game_over(), mancala::GameOutcome::P2_WIN);
+}
+
+
+TEST_F(BoardTests, BoardCorrectlyDisplayed) {
+    std::string board_str = R"(------------------------------------------------
+|                                              |
+|  /   \  (0)  (1)  (2)  (3)  (4)  (5)  /   \  |
+|  | 1 |                                | 3 |  |
+|  \   /  (5)  (4)  (3)  (2)  (1)  (0)  \   /  |
+|                                              |
+------------------------------------------------
+)";
+
+    unsigned int stores[2]{1, 3};
+    unsigned int pits[2][6]{
+        {0, 1, 2, 3, 4, 5},
+        {0, 1, 2, 3, 4, 5}
+    };
+
+    board = mancala::Board(stores, pits);
+    std::ostringstream stream;
+
+    stream << board;
+
+    std::cout << board << std::endl << board_str << std::endl;
+    
+    ASSERT_EQ(stream.str(), board_str);
 }

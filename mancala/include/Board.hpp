@@ -2,6 +2,7 @@
 #define BOARD_HEADER
 
 #include <vector>
+#include <iostream>
 
 #include "GameOutcome.hpp"
 
@@ -18,19 +19,22 @@ public:
     Board(unsigned int stores[2], unsigned int pits[2][PITS]);
 
     // Returns the number of pieces in the given store
-    unsigned int store(unsigned int player);
+    unsigned int store(unsigned int player) const;
 
     // Returns the number of pieces in the given pit
-    unsigned int pit(unsigned int player, unsigned int pit);
+    unsigned int pit(unsigned int player, unsigned int pit) const;
 
     // Sows the pit for the given player
     void sow(unsigned int player, unsigned int pit);
 
     // Returns a vector of legal moves the given player can make
-    std::vector<unsigned int> legal_moves(unsigned int player);
+    std::vector<unsigned int> legal_moves(unsigned int player) const;
     
     // Returns the outcome of the game at the current state
-    GameOutcome game_over();
+    GameOutcome game_over() const;
+
+    // Insert the board into the stream
+    friend std::ostream& operator<<(std::ostream& stream, const Board& board);
 
 private:
     unsigned int stores[2]; // 1 store per player
