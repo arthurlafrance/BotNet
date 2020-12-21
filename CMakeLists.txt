@@ -12,7 +12,7 @@ add_executable(botnet
     app/cli.cpp
 ) # Add src files to executable
 
-target_include_directories(botnet PUBLIC app/include) # include headers
+include_directories(include) # include headers
 
 # Add subdirectories
 add_subdirectory(mancala)

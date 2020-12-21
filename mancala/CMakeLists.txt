@@ -7,6 +7,8 @@ project(mancala)
 
 add_library(mancala
     models/Board.cpp
-)
+    models/UserPlayer.cpp
+    models/AIPlayer.cpp
 
-target_include_directories(mancala PUBLIC include)
+    views/SimpleTextView.cpp
+)

@@ -1,9 +1,9 @@
-#include "cli.hpp"
-#include "config.hpp"
+#include "app/cli.hpp"
 
 #include <iostream>
 #include <map>
 
+#include "app/config.hpp"
 
 const std::map<std::string, std::function<void()>> PROGRAMS;
 

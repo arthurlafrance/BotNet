@@ -4,8 +4,8 @@
 
 #include <gtest/gtest.h>
 
-#include "Board.hpp"
-#include "GameOutcome.hpp"
+#include "mancala/Board.hpp"
+#include "mancala/GameOutcome.hpp"
 
 
 class BoardTests : public testing::Test {

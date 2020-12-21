@@ -1,10 +1,10 @@
-#ifndef BOARD_HEADER
-#define BOARD_HEADER
+#ifndef MANCALA_BOARD_HEADER
+#define MANCALA_BOARD_HEADER
 
 #include <vector>
 #include <iostream>
 
-#include "GameOutcome.hpp"
+#include "mancala/GameOutcome.hpp"
 
 namespace mancala {
 

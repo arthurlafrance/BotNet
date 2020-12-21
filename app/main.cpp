@@ -1,6 +1,6 @@
 #include <functional>
 
-#include "cli.hpp"
+#include "app/cli.hpp"
 
 int main(int argc, const char** argv) {
     std::function<void(void)> command = cli::parse_args(argc, argv);

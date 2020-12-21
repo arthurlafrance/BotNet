@@ -1,10 +1,10 @@
-#include "Board.hpp"
+#include "mancala/Board.hpp"
 
 #include <vector>
 #include <stdexcept>
 #include <iostream>
 
-#include "GameOutcome.hpp"
+#include "mancala/GameOutcome.hpp"
 
 namespace mancala {
 
@@ -298,7 +298,6 @@ std::ostream& operator<<(std::ostream& stream, const Board& board) {
     stream << "---------" << std::endl; // newline at the end to wrap to next line
 
     return stream;
-
 }
 
 }

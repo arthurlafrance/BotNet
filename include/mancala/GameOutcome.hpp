@@ -1,5 +1,5 @@
-#ifndef GAME_OUTCOME_HEADER
-#define GAME_OUTCOME_HEADER
+#ifndef MANCALA_GAME_OUTCOME_HEADER
+#define MANCALA_GAME_OUTCOME_HEADER
 
 namespace mancala {
 
