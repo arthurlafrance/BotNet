@@ -14,6 +14,8 @@ The source code for Mancala is comprised of:
 
 Also, in the root project directory, the `include/mancala` directory contains the headers exposed by the Mancala library; their corresponding source files are available in one of the above places.
 
+Unit tests for Mancala are available in the `tests` directory in the root project directory.
+
 ### Use
 
 To run Mancala using BotNet, run the BotNet CLI with the following command: `botnet run mancala`
