@@ -10,6 +10,8 @@ namespace mancala {
 
 class SimpleTextView : public mancala::View {
 public:
+    virtual ~SimpleTextView() { }
+
     virtual void refresh(const Board& board, unsigned int current_player);
     virtual unsigned int prompt(unsigned int player);
     virtual void game_over(mancala::GameOutcome outcome);

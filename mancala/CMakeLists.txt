@@ -9,6 +9,7 @@ add_library(mancala
     models/Board.cpp
     models/UserPlayer.cpp
     models/AIPlayer.cpp
+    models/Game.cpp
 
     views/SimpleTextView.cpp
 )

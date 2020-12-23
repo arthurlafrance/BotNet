@@ -14,7 +14,7 @@ void SimpleTextView::refresh(const mancala::Board& board, unsigned int current_p
 }
 
 
-unsigned int prompt(unsigned int player) {
+unsigned int SimpleTextView::prompt(unsigned int player) {
     std::cout << "[Player " << player << "] choose a pit to sow: ";
     
     unsigned int pit;
@@ -26,7 +26,7 @@ unsigned int prompt(unsigned int player) {
 }
 
 
-void game_over(mancala::GameOutcome outcome) {
+void SimpleTextView::game_over(mancala::GameOutcome outcome) {
     switch (outcome) {
     case mancala::GameOutcome::P1_WIN:
         std::cout << "Player 1 won the game!" << std::endl;

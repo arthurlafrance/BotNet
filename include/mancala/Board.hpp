@@ -24,8 +24,8 @@ public:
     // Returns the number of pieces in the given pit
     unsigned int pit(unsigned int player, unsigned int pit) const;
 
-    // Sows the pit for the given player
-    void sow(unsigned int player, unsigned int pit);
+    // Sows the pit for the given player, returns true if sow ended at a store, false otherwise
+    bool sow(unsigned int player, unsigned int pit);
 
     // Returns a vector of legal moves the given player can make
     std::vector<unsigned int> legal_moves(unsigned int player) const;

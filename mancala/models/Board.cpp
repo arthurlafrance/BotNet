@@ -30,47 +30,47 @@ Board::Board(unsigned int stores[2], unsigned int pits[2][PITS]) {
 
 
 unsigned int Board::store(unsigned int player) const {    
-    if (player < 0 || player > 1) {
+    if (player < 1 || player > 2) {
         throw std::out_of_range("attempted to access out-of-range player");
     }
 
-    return stores[player];
+    return stores[player - 1];
 }
 
 
 unsigned int Board::pit(unsigned int player, unsigned int pit) const { 
-    if (player < 0 || player > 1) {
+    if (player < 1 || player > 2) {
         throw std::out_of_range("attempted to access out-of-range player");
     }
-    else if (pit < 0 || pit > Board::PITS - 1) {
+    else if (pit < 1 || pit > Board::PITS) {
         throw std::out_of_range("attempted to access out-of-range pit");
     }
 
-    return pits[player][pit];
+    return pits[player - 1][pit - 1];
 }
 
 
 // Sows the pit for the given player
-void Board::sow(unsigned int player, unsigned int pit) {
-    if (player < 0 || player > 1) {
+bool Board::sow(unsigned int player, unsigned int pit) {
+    if (player < 1 || player > 2) {
         throw std::out_of_range("attempted to access out-of-range player");
     }
-    else if (pit < 0 || pit > Board::PITS - 1) {
+    else if (pit < 1 || pit > Board::PITS) {
         throw std::out_of_range("attempted to access out-of-range pit");
     }
 
-    unsigned int& pieces = pits[player][pit];
+    unsigned int& pieces = pits[player - 1][pit - 1];
     
-    unsigned int row = player;
-    int col = pit - 1;
+    unsigned int row = player - 1;
+    int col = pit - 2;
 
     while (pieces > 0) {
-        if (col < -1) {
+        if ((col == -1 && row != player - 1) || col < -1) {
             row = row > 0 ? row - 1 : 1;
             col = Board::PITS - 1;
         }
 
-        if (col >= 0) {
+        if (col >= 0) { 
             ++(pits[row][col]);
         }
         else {
@@ -80,16 +80,18 @@ void Board::sow(unsigned int player, unsigned int pit) {
         --pieces;
         --col;
     }
+
+    return col == -2;
 }
 
 
 // Returns a vector of legal moves the given player can make
 std::vector<unsigned int> Board::legal_moves(unsigned int player) const {
-    if (player < 0 || player > 1) {
+    if (player < 1 || player > 2) {
         throw std::out_of_range("attempted to access out-of-range player");
     }
     
-    const unsigned int (&row)[Board::PITS] = pits[player];
+    const unsigned int (&row)[Board::PITS] = pits[player - 1];
 
     std::vector<unsigned int> moves;
 
@@ -188,8 +190,8 @@ std::ostream& operator<<(std::ostream& stream, const Board& board) {
     stream << "|  /   \\ ";
 
     // for each pit: 1 space left margin, open paren, pit value, close paren, 1 space right margin
-    for (unsigned int i = 0; i < Board::PITS; ++i) {
-        stream << " (" << board.pit(0, i) << ") ";
+    for (unsigned int i = 1; i <= Board::PITS; ++i) {
+        stream << " (" << board.pit(1, i) << ") ";
     }
 
     // 1 space for store left margin
@@ -212,7 +214,7 @@ std::ostream& operator<<(std::ostream& stream, const Board& board) {
     // 1 space for store right padding
     // 1 pipe for store right edge
     // 1 space for store right margin
-    stream << "|  | " << board.store(0) << " | ";
+    stream << "|  | " << board.store(1) << " | ";
     
     // for each pit: 1 space left margin, 3 spaces pit contents, 1 space right margin
     for (unsigned int i = 0; i < Board::PITS; ++i) {
@@ -228,7 +230,7 @@ std::ostream& operator<<(std::ostream& stream, const Board& board) {
     // 1 space for store right margin
     // 1 space for right margin
     // 1 pipe for right border
-    stream << " | " << board.store(1) << " |  |" << std::endl;
+    stream << " | " << board.store(2) << " |  |" << std::endl;
     
     // print bottom of stores, bottom row of pits in between
     
@@ -242,8 +244,8 @@ std::ostream& operator<<(std::ostream& stream, const Board& board) {
     stream << "|  \\   / ";
 
     // for each pit: 1 space left margin, open paren, pit value, close paren, 1 space right margin
-    for (int i = Board::PITS - 1; i >= 0; --i) {
-        stream << " (" << board.pit(1, i) << ") ";
+    for (int i = Board::PITS; i > 0; --i) {
+        stream << " (" << board.pit(2, i) << ") ";
     }
 
     // 1 space for store left margin

@@ -4,12 +4,12 @@
 #include "mancala/Player.hpp"
 
 namespace mancala {
-
+/*
 class AIPlayer : public mancala::Player {
 public:
     virtual void make_move();
 };
-
+*/
 }
 
 #endif

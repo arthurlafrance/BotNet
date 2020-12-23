@@ -2,6 +2,7 @@
 #define MANCALA_PLAYER_HEADER
 
 #include "mancala/Board.hpp"
+#include "mancala/Move.hpp"
 
 namespace mancala {
 
@@ -9,10 +10,14 @@ class Player {
 public:
     Player(unsigned int id, mancala::Board& board);
 
+    virtual ~Player() { }
+
     unsigned int id() const;
 
     const mancala::Board& board() const;
     mancala::Board& board();
+
+    virtual mancala::Move make_move() = 0;
 
 private:
     mancala::Board& _board;

@@ -8,9 +8,12 @@ namespace mancala {
 
 class View {
 public:
-    virtual void refresh(const mancala::Board& board, unsigned int current_player); 
-    virtual unsigned int prompt_move(unsigned int player);
-    virtual void game_over(mancala::GameOutcome outcome);
+    View() { }
+    virtual ~View() { }
+
+    virtual void refresh(const mancala::Board& board, unsigned int current_player) = 0; 
+    virtual unsigned int prompt(unsigned int player) = 0;
+    virtual void game_over(mancala::GameOutcome outcome) = 0;
 };
 
 }
