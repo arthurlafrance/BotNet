@@ -9,7 +9,6 @@ void Game::start() {
 
         mancala::Move move;
 
-        // make player move return an outcome -- can be either take another turn, next player's turn, or quit
         if (current_player == 1) {
             move = player1->make_move();
 
@@ -18,7 +17,7 @@ void Game::start() {
             }
         }
         else {
-            player2->make_move();
+            move = player2->make_move();
             
             if (move == mancala::Move::TURN_DONE) {
                 current_player = 1;
