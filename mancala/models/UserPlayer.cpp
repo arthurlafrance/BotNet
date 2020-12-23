@@ -6,11 +6,11 @@
 
 namespace mancala {
 
-mancala::Move UserPlayer::make_move() {
-    unsigned int move = view.prompt(id());
+mancala::Move UserPlayer::make_move(unsigned int player, mancala::Game& game) {
+    unsigned int move = game.view().prompt(player);
 
     if (move > 0) {
-        if (board().sow(id(), move)) {
+        if (game.board().sow(player, move)) {
             return mancala::Move::TURN_CONTINUING;
         }
         else {
