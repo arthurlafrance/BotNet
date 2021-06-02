@@ -1,7 +1,7 @@
 # BotNet
 A miscellaneous collection of (mostly game-playing) AI programs
 
-## Current State
+## Current Status
 This project is tentatively deprecated because I don't really have time to revisit it, but I'll un-archive it in the event that I ever come back to it. Although the prospect of ditching it is a bit sad considering the interesting things I wanted to pursue here, unfortunately I have other more pressing projects that need my attention for now.
 
 ## Overview
