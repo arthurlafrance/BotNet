@@ -1,6 +1,9 @@
 # BotNet
 A miscellaneous collection of (mostly game-playing) AI programs
 
+## Current State
+This project is tentatively deprecated because I don't really have time to revisit it, but I'll un-archive it in the event that I ever come back to it. Although the prospect of ditching it is a bit sad considering the interesting things I wanted to pursue here, unfortunately I have other more pressing projects that need my attention for now.
+
 ## Overview
 BotNet is a set of miscellaneous AI programs I felt inspired to write, either to gain experience, explore an idea I had, or purely for fun. To that end, they mostly take the form of game-playing intelligent agents (which in turn means that it includes playable bare-bones implementations of various games). Another important inspiration behind this project is a desire to sharpen my C++ skills, and to do so in a way that's fun, engaging, and open-source.
 
